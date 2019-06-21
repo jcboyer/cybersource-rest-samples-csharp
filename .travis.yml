@@ -3,16 +3,15 @@ language: cpp
 env:
   - MSBUILD_PATH="c:\Program Files (x86)\Microsoft Visual Studio\2017\BuildTools\MSBuild\15.0\Bin"
 before_install:
-    - dir "C:\Program Files (x86)\Microsoft Visual Studio"
-    - dir "C:\Program Files (x86)\Microsoft Visual Studio 14.0"
-    - dir "C:\Program Files (x86)\Microsoft Visual Studio 14.0\Common7\IDE"
     - dir "C:\Program Files (x86)\Microsoft Visual Studio\2017\BuildTools"
+    - dir "C:\Program Files (x86)\Microsoft Visual Studio\2017\BuildTools\VC#"
     - export PATH=$MSBUILD_PATH:$PATH
     - MSBuild.exe -help
 
-install:
-    - nuget restore cybersource-rest-samples-csharp.sln
+#install:
+#    - nuget restore cybersource-rest-samples-csharp.sln
     
 script:
+    - dir
     - msbuild /p:Configuration=Release cybersource-rest-samples-csharp.sln
     - dir
