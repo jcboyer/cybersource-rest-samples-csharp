@@ -3,7 +3,10 @@ language: cpp
 env:
   - MSBUILD_PATH="c:\Program Files (x86)\Microsoft Visual Studio\2017\BuildTools\MSBuild\15.0\Bin"
 before:
-  - export PATH=$MSBUILD_PATH:$PATH
+  - export PATH=$MSBUILD_PATH:$PATH 
+  - dir "C:\Program Files"
+  - dir "C:\Program Files (x86)"
+  - Dism /online /Enable-Feature /FeatureName:NetFx4 /All
 
 install:
     - nuget restore cybersource-rest-samples-csharp.sln
