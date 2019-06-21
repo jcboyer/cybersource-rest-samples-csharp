@@ -13,5 +13,5 @@ before_install:
     
 script:
     - dir
-    - msbuild /p:Configuration=Release cybersource-rest-samples-csharp.sln
+    - MSBuild.exe cybersource-rest-samples-csharp.sln
     - dir
